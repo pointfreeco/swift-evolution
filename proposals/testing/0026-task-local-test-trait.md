@@ -149,7 +149,17 @@ The proposed APIs are purely additive.
 
 ## Alternatives considered
 
-We can decide to not add the trait since technically it is possible to implement its 
+A few other spellings have been proposed:
+
+* `$isEnabled.set(true)`
+* `.withValue($isEnabled, true)` 
+* `.withValue(true, for: $isEnabled)` 
+* `.binding($isEnabled, to: true)`
+
+The current name (`.taskLocal(_:withValue:)`) was chosen to explicitly reference `TaskLocal`
+and to mimic its `withValue` method.
+
+We could also decide to not add the trait since technically it is possible to implement its 
 functionality manually for each task local.
 
 ## Future directions
